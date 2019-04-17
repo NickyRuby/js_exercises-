@@ -1,0 +1,14 @@
+// CODE WARS
+
+function maskify(cc) {
+  return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
+
+// return masked string
+function maskify(cc){
+let result = "";
+  for (let i = 0; i < cc.length-4; i++){
+  result += cc[i];
+  }
+  result = result.replace(/./ig,"#");
+  return result;
+}
