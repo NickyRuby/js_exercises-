@@ -23,3 +23,14 @@ let arrayValue = [1, 2, 3, 4, 5];
 reverseArrayInPlace(arrayValue);
 console.log(arrayValue);
 // → [5, 4, 3, 2, 1]
+
+=====
+
+function arrayToList(array){
+  if (array.length > 1) {
+  return {value: array.shift(), rest: arrayToList(array)}
+  }
+}
+
+console.log(arrayToList([10, 20, 30]));
+// → {value: 10, rest: {value: 20, rest: null}}
