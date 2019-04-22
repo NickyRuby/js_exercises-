@@ -66,3 +66,13 @@ function isValidWalk(walk) {
 }
 
 ============================================================================
+
+
+var uniqueInOrder=function(iterable){
+let hey = [];
+for (let i = 0; i < iterable.length; i++) {
+  if (iterable[i] != iterable[i+1]) {hey.push(iterable[i]);}
+}
+return hey;
+
+}
