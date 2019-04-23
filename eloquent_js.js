@@ -44,3 +44,11 @@ function arrayToList(array) {
   }
   return list;
 }
+
+// in_progress
+function listToArray(list) {
+  array = [];
+  for e
+  array.push(list.value);
+  array.push(rest.value)
+}
