@@ -76,3 +76,20 @@ for (let i = 0; i < iterable.length; i++) {
 return hey;
 
 }
+
+/* Playing with digits
+Given a positive integer n written as abcd... (a, b, c, d... being digits) and a positive integer p
+    We want to find a positive integer k, if it exists, such as the sum of the digits of n taken to the successive powers of p is equal to k * n.
+In other words:
+  Is there an integer k such as : (a ^ p + b ^ (p+1) + c ^(p+2) + d ^ (p+3) + ...) = n * k
+If it is the case we will return k, if not return -1.
+*/
+
+function digPow(n, p){
+let y = `${n}`.split('');
+let result = 0;
+for (let i = 0; i < y.length; i++) {
+  result += Math.pow(y[i],p + i)
+  }
+  return result % n == 0? result/n : -1;
+}
