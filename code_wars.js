@@ -93,3 +93,68 @@ for (let i = 0; i < y.length; i++) {
   }
   return result % n == 0? result/n : -1;
 }
+
+
+
+Aplabet.pairs = {
+A : 1,
+B : 2,
+C : 3,
+D : 4,
+E : 5,
+F : 6,
+G : 7,
+H : 8,
+I : 9,
+J : 10,
+K : 11,
+L : 12,
+M : 13,
+N : 14,
+O :	15,
+P : 16,
+Q : 17,
+R : 18,
+S : 19,
+T : 20,
+U : 21,
+V : 22,
+W : 23,
+X : 24,
+Y : 25,
+Z : 26,
+}
+
+function alphabetPosition(text){
+  return text.replace(/./g, function(c) {
+    return Aplabet.pairs[c];
+    });
+
+}
+
+
+=====================================================================
+
+/* <6KAT> Given an array, find the int that appears an odd number of times.
+
+There will always be only one integer that appears an odd number of times.
+
+*/
+
+function findOdd(A) {
+  for (let i = 0; i < A.length; i++) {
+  let x = A[i];
+  let counter = 0;
+  for (let y = 0; y < A.length; y++) {
+  if (A[y] == x) counter += 1;
+  }
+  if (counter % 2 != 0) return x;
+  }
+}
+
+
+=========
+const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
+function findOdd(A) {
+  return A.reduce(function(c,v){return c^v;},0);
+}
