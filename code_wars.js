@@ -133,7 +133,7 @@ function alphabetPosition(text){
 }
 
 
-=====================================================================
+//=====================================================================
 
 /* <6KAT> Given an array, find the int that appears an odd number of times.
 
@@ -157,4 +157,20 @@ function findOdd(A) {
 const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
 function findOdd(A) {
   return A.reduce(function(c,v){return c^v;},0);
+}
+
+
+
+// =====================================================================
+
+// Mexican Wave
+function wave(word){
+let result = [];
+
+for (let i = 0; i < word.length; i++){
+if (word[i] != " ") {
+    result.push(word.slice(0,i) + word.charAt(i).toUpperCase() + word.slice(i + 1, word.length));
+    }
+  }
+  return result;
 }
