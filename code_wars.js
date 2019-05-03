@@ -153,7 +153,8 @@ function findOdd(A) {
 }
 
 
-=========
+// =====================================================================
+
 const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
 function findOdd(A) {
   return A.reduce(function(c,v){return c^v;},0);
@@ -174,3 +175,32 @@ if (word[i] != " ") {
   }
   return result;
 }
+
+
+// =====================================================================
+
+// seconds -> HH:MM:SS
+
+function humanReadable(seconds) {
+  // 36399
+  var hh = Math.floor((seconds / 3600)); // 60
+  let mm = Math.floor((seconds - (hh * 3600)) / 60);
+  let ss = (seconds - ((hh * 3600) + (mm * 60)));
+
+
+  return `${00+hh}:${00 + mm}:${00 + ss}`;
+}
+
+
+// 1m = 60s
+// 1h = 3600s
+//
+
+// =====================================================================
+//High-order Function practice
+function add(n) {
+  return (x) => x + n; // return function
+}
+
+// let add1 = add(1) | "add1" is function that takes argument and sum /w 1;
+//  is a function
