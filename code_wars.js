@@ -155,7 +155,7 @@ function findOdd(A) {
 
 // =====================================================================
 
-const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
+const findOdd = (xs) => xs.reduce((a, b) => a ^ b); ]
 function findOdd(A) {
   return A.reduce(function(c,v){return c^v;},0);
 }

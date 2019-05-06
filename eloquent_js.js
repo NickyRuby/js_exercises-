@@ -51,7 +51,7 @@ function arrayToList(array){
   for (let i = array.length - 1; i >= 0; i--) {
     list = {value: array[i], rest: list};
   }
-  return list;  
+  return list;
 }
 
 function listToArray(list) {
@@ -74,3 +74,13 @@ function nth(list,digit) {
   }
  return array[digit]? array[digit] : undefined;
 }
+
+
+//======================================================================
+
+// High Order Functions
+// Task 1
+let arrays = [[1, 2, 3], [4, 5], [6]];
+
+console.log(arrays.reduce((a,b) => a.concat(b)));
+// → [1, 2, 3, 4, 5, 6]
