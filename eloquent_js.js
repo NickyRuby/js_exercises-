@@ -84,3 +84,23 @@ let arrays = [[1, 2, 3], [4, 5], [6]];
 
 console.log(arrays.reduce((a,b) => a.concat(b)));
 // → [1, 2, 3, 4, 5, 6]
+
+//-------------------------------------------------------------------
+
+// Task 2
+function loop (value, test, update, body) {
+  while (test(value)) {
+    body(value);
+    value = update(value);
+  }
+}
+
+loop(3, n => n > 0, n => n - 1, console.log);
+// → 3
+// → 2
+// → 1
+
+//or
+function loop (value, test, update, body) {
+  for (let i = value; test(i); i = update(i)) body(i);
+}
