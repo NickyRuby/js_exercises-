@@ -104,3 +104,20 @@ loop(3, n => n > 0, n => n - 1, console.log);
 function loop (value, test, update, body) {
   for (let i = value; test(i); i = update(i)) body(i);
 }
+
+
+// Task 3
+
+/* function every(array, test) {
+  let good = 0, bad = 0;
+  for (let each of array) if (test(each)) good++; else bad++;
+  return array.length == good ? true : false;
+}
+*/
+
+function every(array,test){
+  return !array.some(element => !test(element));
+}
+
+
+  
