@@ -204,3 +204,13 @@ function add(n) {
 
 // let add1 = add(1) | "add1" is function that takes argument and sum /w 1;
 //  is a function
+
+// =====================================================================
+
+function iqTest(numbers) {
+ let array = numbers.split(' ');
+ if (array.some(n => !(n % 2 == 0))) return array.findIndex(n => n % 2 != 0) + 1;
+ else {
+   return array.findIndex(n => n % 2 == 0) + 1;
+	}
+}
