@@ -214,3 +214,28 @@ function iqTest(numbers) {
    return array.findIndex(n => n % 2 == 0) + 1;
 	}
 }
+
+
+// =====================================================================
+// 🌟
+function pascal(n){
+  let result = [];
+
+  for (let i = 1; i <= n; i++) {
+    let level = [];
+    for (let y = 1; y <= i;y++) {
+      let a = result[i-1]
+      level.push(); // define element value;
+    result.push(level);
+  }
+  return result;
+  }
+
+console.log(pascal(3));
+
+
+//===================================================================
+function fibbo(n){
+ if (n <= 1) return 1;
+ return fibbo(n-1) + fibbo(n-2)
+}
