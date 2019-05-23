@@ -179,3 +179,44 @@ console.log(dominantDirection("Hello!"));
 // → ltr
 console.log(dominantDirection("Hey, مساء الخير"));
 // →
+
+
+//======================================================================
+
+// The Secret Life of Objects
+// Task 1
+
+class Vec {
+  constructor(x,y) {
+    this.x = x;
+    this.y = y;
+  }
+
+   plus(obj){
+    let sum = {};
+    sum.x = this.x + obj.x;
+    sum.y = this.y + obj.y;
+    return sum;
+    // return new Vec(this.x + obj.x, this.y + obj.y);
+  }
+
+  minus(obj){
+    let min = {};
+    min.x = this.x - obj.x;
+    min.y = this.y - obj.y;
+    return min;
+    // return new Vec(this.x - obj.x, this.y - obj.y);
+
+  }
+
+  get length() { return Math.sqrt(this.x * this.x + this.y * this.y); }
+
+}
+
+console.log(new Vec(1, 2).plus(new Vec(2, 3)));
+// → Vec{x: 3, y: 5}
+console.log(new Vec(1, 2).minus(new Vec(2, 3)));
+// → Vec{x: -1, y: -1}
+console.log(new Vec(3, 4).length);
+// → 5
+// → 5
