@@ -219,19 +219,19 @@ function iqTest(numbers) {
 // =====================================================================
 // 🌟
 function pascal(n){
-  let result = [];
+  let triangle = [[1]];
 
-  for (let i = 1; i <= n; i++) {
-    let level = [];
-    for (let y = 1; y <= i;y++) {
-      let a = result[i-1]
-      level.push(); // define element value;
-    result.push(level);
-  }
-  return result;
-  }
-
-console.log(pascal(3));
+  for (let i = 0; i < n - 1; i++) {
+    let level = [1];
+    for (let y = 1; y < triangle[i].length ; y++) {
+    // define element value;
+     level[y] = triangle[i][y] + triangle[i][y-1];
+    }
+    level.push(1);
+    triangle.push(level);
+ }
+  return triangle.join(',');
+}
 
 
 //===================================================================
