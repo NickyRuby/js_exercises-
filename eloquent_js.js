@@ -264,6 +264,7 @@ console.log(group.has(10));
 
 // Task 3: Make Group Interatable
 
+// Your code here (and the code from the previous exercise)
 class Group  {
   constructor() {
     this.members = [];
@@ -283,17 +284,6 @@ class Group  {
     return this.members.includes(value);
   }
 
-  next() {
-    if (this.count == this.members.length) return {done:true}
-
-    let value = { count: 0,
-				  value: this.members[this.count]
-                }
-    this.count++
-
-    return {value, done: false}
-  }
-
   static from (obj) {
     let group = new Group;
     for (let each of obj) {
@@ -302,18 +292,30 @@ class Group  {
     return group;
   }
 
+  [Symbol.iterator](){
+    return new IterableGroup(this);
+  }
 }
 
-let group = Group.from([10, 20]);
-console.log(group);
-console.log(group.has(10));
-// → true
-console.log(group.has(30));
-// → false
-group.add(10);
-group.delete(10);
-console.log(group.has(10));
-// → false
+class IterableGroup {
+  constructor(group){
+    this.counter = 0;
+    this.group = group;
+  }
+
+   next() {
+    if (this.counter == this.group.members.length) return {done:true};
+	  let result = { value: this.group.members[this.counter], done: false}
+    this.counter++
+    return result;
+   }
+}
+
+
 for (let value of Group.from(["a", "b", "c"])) {
   console.log(value);
+}
+// → a
+// → b
+// → c
 }
