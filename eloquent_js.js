@@ -319,3 +319,13 @@ for (let value of Group.from(["a", "b", "c"])) {
 // → b
 // → c
 }
+
+
+// Task 4. BugFix
+let map = {one: true, two: true, hasOwnProperty: true};
+
+// Fix this call
+// console.log(map.hasOwnProperty("one")); // to_fix
+console.log(hasOwnProperty.call(this,"one"));
+console.log(map.hasOwnProperty("one"));
+// → true
